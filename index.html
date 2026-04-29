@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <meta name="description" content="Professional password strength checker with real-time analysis">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Password Strength Analyzer</h1>
+                </div>
+                <p class="subtitle">Check your password security in real-time</p>
+            </div>
+
+            <div class="input-section">
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="passwordInput" 
+                        placeholder="Enter your password"
+                        autocomplete="off"
+                    >
+                    <div class="input-controls">
+                        <button id="togglePassword" class="icon-btn">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button id="copyPassword" class="icon-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="resetPassword" class="icon-btn">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strength-section">
+                <div class="strength-meter">
+                    <div class="meter-bar">
+                        <div id="strengthBar" class="meter-fill"></div>
+                    </div>
+                    <div class="strength-labels">
+                        <span class="strength-label" data-strength="very-weak">Very Weak</span>
+                        <span class="strength-label" data-strength="weak">Weak</span>
+                        <span class="strength-label" data-strength="medium">Medium</span>
+                        <span class="strength-label" data-strength="strong">Strong</span>
+                    </div>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div id="scoreValue" class="score-value">0</div>
+                        <span class="score-label">Score</span>
+                    </div>
+                    <div class="score-info">
+                        <div class="crack-time">
+                            <span class="label">Crack Time:</span>
+                            <span id="crackTime" class="value">Instant</span>
+                        </div>
+                        <div class="entropy">
+                            <span class="label">Entropy:</span>
+                            <span id="entropyValue" class="value">0 bits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="requirements-section">
+                <h3>Password Requirements</h3>
+                <div class="requirements-list">
+                    <div id="reqLength" class="requirement-item">
+                        <i class="fas fa-times"></i>
+                        <span>At least 8 characters</span>
+                    </div>
+                    <div id="reqLowercase" class="requirement-item">
+                        <i class="fas fa-times"></i>
+                        <span>Contains lowercase letters</span>
+                    </div>
+                    <div id="reqUppercase" class="requirement-item">
+                        <i class="fas fa-times"></i>
+                        <span>Contains uppercase letters</span>
+                    </div>
+                    <div id="reqNumber" class="requirement-item">
+                        <i class="fas fa-times"></i>
+                        <span>Contains numbers</span>
+                    </div>
+                    <div id="reqSymbol" class="requirement-item">
+                        <i class="fas fa-times"></i>
+                        <span>Contains special symbols</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-section">
+                <div id="feedbackMessage" class="feedback-message">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Start typing to analyze your password strength</span>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Length</span>
+                    <span id="lengthValue" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Character Set</span>
+                    <span id="charsetValue" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Complexity</span>
+                    <span id="complexityValue" class="stat-value">Low</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3><i class="fas fa-lightbulb"></i> Security Tips</h3>
+            <ul>
+                <li>Use at least 12 characters for strong security</li>
+                <li>Combine uppercase, lowercase, numbers, and symbols</li>
+                <li>Avoid common words and personal information</li>
+                <li>Consider using a passphrase instead of a password</li>
+                <li>Use unique passwords for different accounts</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
